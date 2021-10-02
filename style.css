@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #E0ACD5, #3993DD, #F4EBE8, #29E7CD, #6A3E37 );
+    background-size: 400% 400%;
+    -webkit-animation: gradientBG 10s ease infinite;
+    animation: gradientBG 10s ease infinite;
+  }
+  
+  section {
+    display: grid;
+    grid-template-rows: repeat(4, 10rem);
+    grid-template-columns: repeat(4, 10rem);
+    perspective: 800px;
+    grid-gap: 2rem;
+  }
+  
+  .back {
+    background-color: black;
+  }
+  
+  .face,
+  .back {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .toggleCard {
+    transform: rotateY(180deg);
+  }
+
+
+@-webkit-keyframes gradientBG {
+  0% {
+  background-position: 0% 50%;
+  }
+  50% {
+  background-position: 100% 50%;
+  }
+  100% {
+  background-position: 0% 50%;
+  }
+  }
+  @keyframes gradientBG {
+  0% {
+  background-position: 0% 50%;
+  }
+  50% {
+  background-position: 100% 50%;
+  }
+  100% {
+  background-position: 0% 50%;
+  }
+  }
